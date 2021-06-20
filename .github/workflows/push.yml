@@ -22,8 +22,8 @@ jobs:
         name: DockerHub
         uses: docker/login-action@v1 
         with:
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.TOKEN }}
+          username: tmvdl
+          password: ${{ secrets.GITHUBDOCKERPHP }}
       -
         name: Build
         run: sh build.sh 7.2 7.2-composer2 7.3 7.3-composer2
