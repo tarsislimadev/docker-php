@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  laravel:
+    build: './samples/laravel'  
+    volumes:
+      - './samples/laravel:/app'
+    ports:
+      - '80:80'
