@@ -1,26 +1,13 @@
-FROM debian:buster-20210408
+FROM composer/composer as composer
 
-RUN apt update && apt install -y php7.2 \
-  php-zip \
-  php-dom \
-  php-opcache \
-  php-pdo \
-  php-calendar \
-  php-ctype \
-  php-curl \
-  php-exif \
-  php-fileinfo \
-  php-ftp \
-  php-gettext \
-  php-iconv \
-  php-json \
-  php-mbstring \
-  php-phar \
-  php-posix \
-  php-readline \
-  php-shmop \
-  php-sockets \
-  php-sysvmsg \
-  php-sysvsem \
-  php-sysvshm \
-  php-tokenizer
+FROM php:7.2
+
+ENV PORT 80
+
+COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
+
+COPY ./docker-entrypoint.sh /docker-entrypoint.sh
+
+WORKDIR /app
+
+ENTRYPOINT ["/docker-entrypoint.sh"]

@@ -1,6 +1,6 @@
 FROM composer/composer as composer
 
-FROM php:7.3
+FROM php:7.4
 
 ENV PORT 80
 
