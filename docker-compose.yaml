@@ -6,14 +6,10 @@ services:
     image: 'tmvdl/php:7.2'
     build: './src/7.2'
 
-  php7.2-composer2:
-    image: 'tmvdl/php:7.2-composer2'
-    build: './src/7.2-composer2'
-
   php7.3:
     image: 'tmvdl/php:7.3'
     build: './src/7.3'
 
-  php7.3-composer2:
-    image: 'tmvdl/php:7.3-composer2'
-    build: './src/7.3-composer2'
+  php7.4:
+    image: 'tmvdl/php:7.4'
+    build: './src/7.4'
