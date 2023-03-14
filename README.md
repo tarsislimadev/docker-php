@@ -12,15 +12,23 @@ Instalar o [Docker](https://docs.docker.com/engine/install/).
 
 1. Criar um arquivo `docker-compose.yaml` na raiz do projeto com a imagem [tmvdl/php](https://hub.docker.com/r/tmvdl/php).
 
+WORKDIR /app
+
+COPY . .
+
+ENTRYPOINT php artisan serve --host=0.0.0.0 --port=80
+
+
 ```yaml
 # docker-compose.yaml
 version: '3'
 
 services:
   app:
-    image: tmvdl/php
+    image: 'tmvdl/php:8.1'
+    working_dir: '/app'
     volumes:
-      - .:/app
+      - '.:/app'
 ```
 
 2. Subir o container para a construção do build
