@@ -1,7 +1,11 @@
 version: '3'
 
 services:
-    
+
+  composer:
+    image: 'tmvdl/php:composer'
+    build: './src/composer'
+
   php7.2:
     image: 'tmvdl/php:7.2'
     build: './src/7.2'
