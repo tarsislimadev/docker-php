@@ -8,7 +8,7 @@ COPY --from=composer/composer:latest-bin /composer /usr/bin/composer
 
 COPY ./docker-entrypoint.sh /docker-entrypoint.sh
 
-COPY php.ini /usr/local/etc/php/php.ini
-
 WORKDIR /app
+
+ENTRYPOINT [ "/docker-entrypoint.sh" ]
 
