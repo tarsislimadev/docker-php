@@ -2,6 +2,10 @@ version: '3'
 
 services:
 
+  symfony:
+    image: 'tmvdl/php:symfony'
+    build: './src/symfony'
+
   composer:
     image: 'tmvdl/php:composer'
     build: './src/composer'
